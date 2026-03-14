@@ -1,32 +1,60 @@
 
 # Spray Paint Simulation using OpenUSD
 
-This project implements a spray paint simulation that follows the assignment tasks provided.
+**Project Overview**
+This project simulates a spray painting process on a surface using OpenUSD. The spray emitter produces a triangular wedge (fan) pattern, similar to real industrial paint spray guns. The simulation generates paint particles that interact with a surface (a cuboid wall mesh) and records the paint accumulation on the surface. The resulting USD scene can be visualized using Pixar USDView, allowing inspection of the spray pattern and paint distribution.
+
+# Installation
+1. Clone the repository (Alternatively you can download this repository and work run it locally on vscode)
+```git clone https://github.com/yourusername/spray_paint_usd_project.git```
+```cd spray_paint_usd_project```
+
+2. Install dependencies
+Ensure Python 3.10+ is installed.
+Install required libraries:
+```pip install numpy matplotlib usd-core```
+
+Verify the installation of OpenUSD:
+```python -c "from pxr import Usd;print(Usd.GetVersion())"```
 
 ## Requirements
-pip install usd-core numpy pillow
+```pip install usd-core numpy pillow```
 
 To inspect results:
-usdview scene.usda
+```usdview scene.usda```
 
 ## Steps
 
 1. Create wall (This will create a .usda file indicating that the wall has been created successfully)
-python create_wall.py 
+```python create_wall.py```
 
 2. Run simulation (This code runs the simulation and generates images to view the results before moving to OpenUSD)
-python run_simulation.py
+```python run_simulation.py```
 
 3. Update the same in the USD File
-python apply_texture.py
+```python apply_texture.py```
 
-3. Inspect scene
-usdview scene.usda
+3. Inspect scene in OpenUSD
+``usdview scene.usda``
 
-Outputs:
-paint_step_0.png
-paint_step_50.png
-paint_step_100.png
-paint_final.png
+# Custom Simulation Parameters
+| Parameter   | Description                 |
+| ----------- | --------------------------- |
+| `--width`   | Spray fan angle             |
+| `--range`   | Maximum spray distance      |
+| `--density` | Number of particles emitted |
 
-Texture applied to wall
+# Confirming Paint Accumulation
+
+Once the scene opens in Pixar USDView:
+  1. Locate the wall surface in the Stage Tree
+  2. Inspect the mesh properties
+  3. Enable Display Color in the viewport
+  4. Observe the triangular spray pattern on the surface
+
+Correct simulation behavior should show:
+  1. Higher paint accumulation near the center of the spray
+  2. A triangular wedge distribution pattern
+  3. Increasing paint density closer to the emitter axis
+
+
