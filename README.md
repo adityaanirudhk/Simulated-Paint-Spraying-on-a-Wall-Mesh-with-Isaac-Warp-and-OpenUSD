@@ -4,6 +4,35 @@
 **Project Overview**
 This project simulates a spray painting process on a surface using OpenUSD. The spray emitter produces a triangular wedge (fan) pattern, similar to real industrial paint spray guns. The simulation generates paint particles that interact with a surface (a cuboid wall mesh) and records the paint accumulation on the surface. The resulting USD scene can be visualized using Pixar USDView, allowing inspection of the spray pattern and paint distribution.
 
+# Simulation Workflow
+```mermaid
+flowchart TD
+
+A[Start Simulation] --> B[Create Wall Surface]
+B --> C[Generate USD Scene File]
+
+C --> D[Initialize Spray Parameters]
+D --> E[Spray Emitter Generates Particles]
+
+E --> F[Particles Travel in Triangular Wedge Pattern]
+
+F --> G[Check Particle Collision with Wall]
+
+G -->|Hit Wall| H[Record Paint Accumulation]
+G -->|Miss Wall| I[Discard Particle]
+
+H --> J[Generate Spray Pattern Image]
+J --> K[Apply Texture to USD Surface]
+
+K --> L[Update scene.usda File]
+
+L --> M[Open Scene in USDView]
+
+M --> N[Inspect Paint Distribution]
+
+N --> O[End Simulation]
+```
+
 # Installation
 1. Clone the repository (Alternatively you can download this repository and work run it locally on vscode)
 ```bash
