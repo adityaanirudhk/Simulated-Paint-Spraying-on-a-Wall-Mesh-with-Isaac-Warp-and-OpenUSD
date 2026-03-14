@@ -1,0 +1,4 @@
+
+usd-core
+numpy
+pillow
