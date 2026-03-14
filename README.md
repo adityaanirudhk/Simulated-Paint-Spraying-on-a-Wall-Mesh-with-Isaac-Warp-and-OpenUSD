@@ -38,7 +38,7 @@ N --> O[End Simulation]
 # Installation
 1. Clone the repository (Alternatively you can download this repository and work run it locally on vscode)
 ```bash
-git clone https://github.com/yourusername/spray_paint_usd_project.git
+git clone https://github.com/adityaanirudhk/spray_paint_usd_project.git
 cd spray_paint_usd_project
 ```
 
