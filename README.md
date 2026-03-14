@@ -6,36 +6,54 @@ This project simulates a spray painting process on a surface using OpenUSD. The 
 
 # Installation
 1. Clone the repository (Alternatively you can download this repository and work run it locally on vscode)
-```git clone https://github.com/yourusername/spray_paint_usd_project.git```
-```cd spray_paint_usd_project```
+```bash
+git clone https://github.com/yourusername/spray_paint_usd_project.git
+cd spray_paint_usd_project
+```
 
-2. Install dependencies
+3. Install dependencies
 Ensure Python 3.10+ is installed.
 Install required libraries:
-```pip install numpy matplotlib usd-core```
+```bash
+pip install numpy matplotlib usd-core
+```
 
 Verify the installation of OpenUSD:
-```python -c "from pxr import Usd;print(Usd.GetVersion())"```
+```bash
+python -c "from pxr import Usd;print(Usd.GetVersion())"
+```
 
 ## Requirements
-```pip install usd-core numpy pillow```
+```bash
+pip install usd-core numpy pillow
+```
 
 To inspect results:
-```usdview scene.usda```
+```bash
+usdview scene.usda
+```
 
 ## Steps
 
 1. Create wall (This will create a .usda file indicating that the wall has been created successfully)
-```python create_wall.py```
+```bash
+python create_wall.py
+```
 
-2. Run simulation (This code runs the simulation and generates images to view the results before moving to OpenUSD)
-```python run_simulation.py```
+3. Run simulation (This code runs the simulation and generates images to view the results before moving to OpenUSD)
+```bash
+python run_simulation.py
+```
 
-3. Update the same in the USD File
-```python apply_texture.py```
+5. Update the same in the USD File
+```bash
+python apply_texture.py
+```
 
 3. Inspect scene in OpenUSD
-``usdview scene.usda``
+```bash
+usdview scene.usda
+```
 
 # Custom Simulation Parameters
 | Parameter   | Description                 |
