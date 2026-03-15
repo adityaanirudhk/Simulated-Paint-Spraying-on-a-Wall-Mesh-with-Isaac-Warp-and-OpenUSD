@@ -13,7 +13,7 @@ flowchart TD
 A[Start Simulation] --> B[Create Wall Geometry]
 B --> C[OpenUSD: Generate scene.usda and define wall mesh]
 
-C --> D[Initialize Spray Parameters\n(width, range, particle density)]
+C --> D[Initialize Spray Parameters (width, range, particle density)]
 
 D --> E[Isaac Warp: Generate Spray Particles\nTriangular Wedge Distribution]
 
