@@ -10,29 +10,27 @@ This project simulates a spray painting process on a surface using OpenUSD. The 
 ```mermaid
 flowchart TD
 
-A[Start Simulation] --> B[Create Wall Geometry]
-B --> C[OpenUSD: Generate scene.usda and define wall mesh]
+A[Start Simulation] --> B[Create Wall Surface]
+B --> C[Generate USD Scene File]
 
-C --> D[Initialize Spray Parameters (width, range, particle density)]
+C --> D[Initialize Spray Parameters]
+D --> E[Spray Emitter Generates Particles]
 
-D --> E[Isaac Warp: Generate Spray Particles\nTriangular Wedge Distribution]
-
-E --> F[Isaac Warp: GPU-Accelerated Particle Simulation]
+E --> F[Particles Travel in Triangular Wedge Pattern]
 
 F --> G[Check Particle Collision with Wall]
 
-G -->|Hit Wall| H[Compute Paint Accumulation Map]
+G -->|Hit Wall| H[Record Paint Accumulation]
 G -->|Miss Wall| I[Discard Particle]
 
-H --> J[Generate Paint Density Image]
-
-J --> K[OpenUSD: Apply Texture to Wall Surface]
+H --> J[Generate Spray Pattern Image]
+J --> K[Apply Texture to USD Surface]
 
 K --> L[Update scene.usda File]
 
 L --> M[Open Scene in USDView]
 
-M --> N[Visualize Paint Distribution]
+M --> N[Inspect Paint Distribution]
 
 N --> O[End Simulation]
 ```
