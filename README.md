@@ -75,6 +75,10 @@ python create_wall.py
 ```bash
 python run_simulation.py
 ```
+You will get a result as .png files depicting paint accumulation on walls at different timesteps
+
+<img width="1282" height="695" alt="image" src="https://github.com/user-attachments/assets/95c8a076-4c05-4d01-9760-0b2a95adf78d" />
+
 
 5. Update the same in the USD File
 ```bash
